@@ -1,5 +1,8 @@
 import express from "express";
-import { addNewCategory } from "../controllers/category.controller.js";
+import {
+  addNewCategory,
+  getCategory,
+} from "../controllers/category.controller.js";
 
 const router = express.Router();
 // router.get("/", getAllCustomers); // Get All Customers
@@ -11,6 +14,7 @@ const router = express.Router();
 /* For Mobile Applications */
 
 router.post("/addCategory", addNewCategory); // Add New category
+router.get("/getAll", getCategory); // Add New category
 // router.get("/resend-otp/:email", resendEmailVerificationOTP); // Resend OTP for Email Verification
 // router.patch("/verify-email", verifyEmail); // Verify Email
 // router.post("/login", loginCustomer); // Login Customer

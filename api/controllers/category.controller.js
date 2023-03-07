@@ -1,6 +1,6 @@
 import Category from "../models/Category.js";
 
-export const addNewCategory = async (req, res) => {
+export const addNewCategory = (req, res) => {
   const { image, name } = req.body;
 
   //   let newCustomerDetails = {
@@ -40,5 +40,11 @@ export const addNewCategory = async (req, res) => {
     },
   ])
     .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+};
+
+export const getCategory = (req, res) => {
+  Category.find()
+    .then((category) => res.json(category))
     .catch((err) => console.log(err));
 };
